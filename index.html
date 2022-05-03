@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FLASHLIGHT</title>
 </head>
 <style>
     *{
@@ -37,7 +37,7 @@
 </style>
 <body>
     <div class="cont">
-        <button class="light_btn"> Turn on the Light! </button>
+        <button class="light_btn"> Turn on the Light !! </button>
     </div>
 </body>
 <script>
@@ -48,17 +48,17 @@
     btn.onclick = ()=>{
         if (flag) {
             flag=false;
-            document.body.style.backgroundColor = "black";
+            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.792)";
             btn.style.border = "1px solid white";
             btn.style.color = "white";
-            btn.innerHTML = "Turn on the light!"
+            btn.innerHTML = "Turn on the light !!"
             
         } else {
             flag=true;
             document.body.style.backgroundColor = "white";
             btn.style.border = "1px solid black";
             btn.style.color = "black";
-            btn.innerHTML = "Turn off the light!"
+            btn.innerHTML = "Turn off the light !!"
         }
     }
 </script>
