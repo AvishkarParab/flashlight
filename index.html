@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLASHLIGHT</title>
+    <link rel="shortcut icon" href="./icons8-torch-32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 </head>
 <style>
     *{
@@ -20,13 +23,25 @@
         justify-content: center;
         align-items: center;
     }
+    .cont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .onn,.off{
+        position: absolute;
+        font-size: 40px;
+        color: white;
+    }
+    .onn{
+        display: none;
+        color: black;
+    }
     .light_btn{
-        border: 1px solid white;
         padding: 10px;
         background: transparent;
         color: white;
         letter-spacing: 1px;
-        border-radius: 10px;
     }
     .light_btn:hover{
         transition: 0.6s all ease;
@@ -36,29 +51,44 @@
 
 </style>
 <body>
-    <div class="cont">
-        <button class="light_btn"> Turn on the Light !! </button>
+    <div class="">
+        <h3 class="light_btn"> Turn ONN the light <i class="bi bi-lightbulb"></i> </h3>
+        <br>
+        <div class="cont">
+            <span class="onn"><i class="fa-solid fa-toggle-on"></i></span>
+            <span class="off"><i class="fa-solid fa-toggle-off"></i></span>
+        </div>
+        
     </div>
 </body>
+<script src="https://kit.fontawesome.com/36fe686b6f.js" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
 <script>
 
-    const btn = document.querySelector(".light_btn");
+    const cont = document.querySelector(".cont");
+    const onn = document.querySelector(".onn");
+    const off = document.querySelector(".off");
+    const light_btn = document.querySelector(".light_btn");
+
+
     let flag = false;
 
-    btn.onclick = ()=>{
+    cont.onclick = ()=>{
         if (flag) {
+            onn.style.display = "none";
+            off.style.display = "block";
             flag=false;
             document.body.style.backgroundColor = "rgba(0, 0, 0, 0.792)";
-            btn.style.border = "1px solid white";
-            btn.style.color = "white";
-            btn.innerHTML = "Turn on the light !!"
+            light_btn.style.color = "white";
+            light_btn.innerHTML = `Turn ONN the light <i class="bi bi-lightbulb"></i>`;
             
         } else {
+            onn.style.display = "block";
+            off.style.display = "none";
             flag=true;
             document.body.style.backgroundColor = "white";
-            btn.style.border = "1px solid black";
-            btn.style.color = "black";
-            btn.innerHTML = "Turn off the light !!"
+            light_btn.style.color = "black";
+            light_btn.innerHTML = `Turn OFF the light <i class="bi bi-lightbulb-off"></i>`;
         }
     }
 </script>
